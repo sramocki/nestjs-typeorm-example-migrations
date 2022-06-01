@@ -51,3 +51,18 @@ $ npm run start:prod
 # unit tests
 $ npm run test
 
+## Migrations
+
+```bash
+# Create a migration
+$ npm run migration:create
+
+# Generate a migration from schema changes
+$ npm run migration:generate
+
+# Run migrations
+$ npm run migration:run
+
+# Revert migrations
+$ npm run migration:revert
+
