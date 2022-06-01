@@ -1,0 +1,29 @@
+### Get All People
+GET http://localhost:3000/person HTTP/1.1
+
+
+### Get Person by ID
+GET http://localhost:3000/person/55 HTTP/1.1
+
+
+### Create a Person
+POST http://localhost:3000/person HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "Sean",
+    "lastName": "Ramocki",
+    "age": "42"
+}
+
+### Update a Person
+PUT http://localhost:3000/person/1 HTTP/1.1
+content-type: application/json
+
+{
+    "age": "45"
+}
+
+### Delete a Person
+DELETE http://localhost:3000/person/2 HTTP/1.1
+
