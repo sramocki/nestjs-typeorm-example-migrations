@@ -24,7 +24,7 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+NestJS Example repository for Postgres TypeORM integration with migrations
 
 ## Installation
 
@@ -50,24 +50,20 @@ $ npm run start:prod
 ```bash
 # unit tests
 $ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
 ```
 
-## Support
+## Migrations
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+```bash
+# Create a migration
+$ npm run migration:create
 
-## Stay in touch
+# Generate a migration from schema changes
+$ npm run migration:generate
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+# Run migrations
+$ npm run migration:run
 
-## License
+# Revert migrations
+$ npm run migration:revert
 
-  Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
