@@ -1,3 +1,4 @@
+import { cwd } from 'process'
 import { DataSource } from 'typeorm'
 
 export const AppDataSource = new DataSource({
@@ -7,10 +8,10 @@ export const AppDataSource = new DataSource({
     username: 'postgres',
     password: 'admin',
     database: 'postgres',
-    entities: ["dist/**/*.entity.js"],
+    entities: [cwd() + '/src/**/*.entity.ts'],
     logging: true,
     synchronize: false,
     migrationsRun: false,
-    migrations: ['dist/**/migrations/*.js'],
+    migrations: [cwd() + '/src/migrations/*.ts'],
     migrationsTableName: 'history'
 })

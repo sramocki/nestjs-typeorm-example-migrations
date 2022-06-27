@@ -18,11 +18,11 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "typeorm": "npm run build && node --require ts-node/register ./node_modules/typeorm/cli.js",
-    "migration:generate": "npm run typeorm -- -d ormconfig.ts migration:generate",
-    "migration:create": "npm run typeorm migration:create",
-    "migration:run": "npm run typeorm -- -d ormconfig.ts migration:run",
-    "migration:revert": "npm run typeorm -- -d ormconfig.ts migration:revert"
+    "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli -d ormconfig.ts",
+    "migration:create": "cross-var ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli migration:create ./src/migrations/$npm_config_name",
+    "migration:generate": "cross-var npm run typeorm -- migration:generate ./src/migrations/$npm_config_name",
+    "migration:run": "npm run typeorm -- migration:run",
+    "migration:revert": "npm run typeorm -- migration:revert"
   },
   "dependencies": {
     "@nestjs/common": "^8.1.1",
@@ -31,12 +31,13 @@
     "@nestjs/platform-express": "^8.1.1",
     "@nestjs/typeorm": "^8.0.4",
     "class-validator": "^0.13.2",
+    "cross-var": "^1.1.0",
     "dotenv": "^16.0.1",
     "pg": "^8.7.3",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.4.0",
-    "typeorm": "^0.3.5"
+    "typeorm": "^0.3.6"
   },
   "devDependencies": {
     "@nestjs/cli": "^8.1.3",
