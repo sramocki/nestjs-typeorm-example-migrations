@@ -56,12 +56,12 @@ $ npm run test
 
 ```bash
 # Create a migration
-$ npm run migration:create
+$ npm run migration:create --name=foo
 
 # Generate a migration from schema changes
-$ npm run migration:generate
+$ npm run migration:generate --name=bar
 
-# Run migrations
+# Run migrations and checks for schema changes
 $ npm run migration:run
 
 # Revert migrations
