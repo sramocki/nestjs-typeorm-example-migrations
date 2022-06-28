@@ -1,4 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn } from "typeorm"
+import { Car } from "src/car/entity/car.entity";
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from "typeorm"
 
 @Entity()
 export class Person {
@@ -13,6 +14,10 @@ export class Person {
 
     @Column()
     age: number;
+
+    @OneToMany(() => Car, car => car.person, {
+      eager: true})
+    cars: Car[];
 
     constructor(firstName: string, lastName?: string, age?: number);
     constructor(firstName: string, lastName: string, age?: number);

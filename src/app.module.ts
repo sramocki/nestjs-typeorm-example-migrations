@@ -5,12 +5,14 @@ import { ConfigModule } from '@nestjs/config'
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppDataSource } from 'ormconfig'
 import { PersonModule } from './person/person.module';
+import { CarModule } from './car/car.module';
 
 @Module({
   imports: [
     ConfigModule.forRoot(),
     TypeOrmModule.forRoot(AppDataSource.options),
-    PersonModule
+    PersonModule,
+    CarModule
   ],
   controllers: [AppController],
   providers: [AppService],

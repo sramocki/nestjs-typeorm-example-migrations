@@ -44,5 +44,13 @@ export class PersonService {
     }
     return { deleted: true };
   }
+
+  async testQuery(): Promise<Person> {
+    return this.personRepository.createQueryBuilder("person")
+    .leftJoinAndSelect("person.cars", "car")
+    //.innerJoinAndSelect("person.cars", "car")
+    //.where("person.firstName = :name", { name: "Sean" })
+    .getOne()
+  }
 }
 

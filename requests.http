@@ -3,7 +3,7 @@ GET http://localhost:3000/person HTTP/1.1
 
 
 ### Get Person by ID
-GET http://localhost:3000/person/55 HTTP/1.1
+GET http://localhost:3000/person/1 HTTP/1.1
 
 
 ### Create a Person
@@ -13,7 +13,7 @@ content-type: application/json
 {
     "firstName": "Sean",
     "lastName": "Ramocki",
-    "age": "42"
+    "age": "85"
 }
 
 ### Update a Person
@@ -27,3 +27,18 @@ content-type: application/json
 ### Delete a Person
 DELETE http://localhost:3000/person/2 HTTP/1.1
 
+### Get All Cars
+GET http://localhost:3000/car HTTP/1.1
+
+### Create a Car
+POST http://localhost:3000/car HTTP/1.1
+content-type: application/json
+
+{
+    "model": "Venza",
+    "make": "Toyota",
+    "person": 1
+}
+
+### Test Query
+PATCH http://localhost:3000/person HTTP/1.1
