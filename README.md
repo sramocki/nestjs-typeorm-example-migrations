@@ -1,5 +1,5 @@
 # Getting Started with TypeORM for NestJS
-[![Presentation](http://img.youtube.com/vi/woMPn3Nm3aA/0.jpg)](http://www.youtube.com/watch?v=YOUTUBE_woMPn3Nm3aA "Getting Started with TypeORM for NestJS by Sean Ramocki")
+[![Presentation](http://img.youtube.com/vi/woMPn3Nm3aA/0.jpg)](http://www.youtube.com/watch?v=woMPn3Nm3aA "Getting Started with TypeORM for NestJS by Sean Ramocki")
 
 
 ## Description
